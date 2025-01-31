@@ -27,7 +27,7 @@ const inventory = [
 function logNames(items) {
   // TODO: use `forEach`
   // For each item in the "inventory" array, console.log the name
-  inventory.forEach((item) => console.log(item.name));
+  items.forEach((item) => console.log(item.name));
 }
 
 /**
@@ -36,6 +36,15 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
+  // Look at every element in "inventory"
+  // Extract the value of the "name" key
+  // Transform all names to uppercase
+  /*const transformedArray = items.map((item) => item.name.toUpperCase());
+  return transformedArray;
+}*/
+  return items.map((item) => {
+    return item.name.toUpperCase();
+  });
 }
 
 /**
@@ -45,6 +54,8 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  const findItem = items.find((item) => item.id === id);
+  return findItem;
 }
 
 /**
@@ -54,6 +65,16 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+  // Create a for loop to loop through the items array
+  // Compare current item name to name parameter
+  // If the item name strictly equals the name parameter return the item price
+
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    if (item.name === name) {
+      return item.price;
+    }
+  }
 }
 
 /**
@@ -63,6 +84,15 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  // Filter category from array
+  // Created a new array
+  // Filter items parameter
+  // Created temporary item variable
+  // Used arrow function to compare item.category to category parameter
+  // Returned new array
+
+  const filteredArray = items.filter((item) => item.category === category);
+  return filteredArray;
 }
 
 /**
