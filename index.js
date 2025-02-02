@@ -101,6 +101,12 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  // Not going to lie, I just mimic'd Lester in the video and I have no idea how this works
+  const totalQuantity = items.reduce(
+    (accumulator, item) => accumulator + item.quantity,
+    0
+  );
+  return totalQuantity;
 }
 
 /**
@@ -109,6 +115,13 @@ function countItems(items) {
  */
 function getTotalPrice(items) {
   // TODO: use `reduce`
+  // To get the total price of all items
+  // Multiply all items by their price
+  const everythingCosts = items.reduce(
+    (accumulator, item) => accumulator + item.price * item.quantity,
+    0
+  );
+  return everythingCosts;
 }
 
 // === READ BUT DO NOT CHANGE THE CODE BELOW ===
